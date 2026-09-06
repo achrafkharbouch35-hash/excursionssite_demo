@@ -2,31 +2,37 @@
    NOMADIA TRAVEL — Design tokens
    ========================================================= */
 :root{
-  --cream:#F8F3E9;
-  --sand:#E7D6B4;
-  --sand-deep:#D9C39A;
-  --terracotta:#C1622D;
-  --terracotta-dark:#A24E22;
-  --olive:#5C6A3C;
-  --olive-dark:#454F2C;
-  --black:#1C1712;
-  --black-soft:#2A2319;
-  --gold:#B08D4F;
-  --ink:#2A2319;
-  --ink-soft:#6B6255;
-  --white:#FFFDF9;
+  /* ===== COLORS ===== */
+  --navy:#071B2E;
+  --navy-2:#0B2942;
+  --navy-3:#123B5A;
 
-  --font-display:'Fraunces', serif;
+  --turquoise:#19B7A5;
+  --turquoise-dark:#0E9183;
+  --turquoise-light:#DDF7F3;
+
+  --sky:#EAF5F8;
+  --surface:#F5F8FA;
+  --white:#FFFFFF;
+  --text:#102334;
+  --text-soft:#667887;
+  --border:#DCE5EA;
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-display:'Manrope', sans-serif;
   --font-body:'Manrope', sans-serif;
 
-  --radius-s:6px;
+  /* ===== SHAPE ===== */
+  --radius-s:8px;
   --radius-m:14px;
-  --radius-l:26px;
+  --radius-l:22px;
 
-  --shadow-card: 0 18px 40px -22px rgba(28,23,18,0.35);
-  --shadow-soft: 0 10px 30px -18px rgba(28,23,18,0.25);
+  /* ===== SHADOWS ===== */
+  --shadow-soft:0 12px 35px rgba(7,27,46,.08);
+  --shadow-card:0 22px 55px rgba(7,27,46,.14);
 
-  --ease: cubic-bezier(.22,.68,0,1);
+  /* ===== MOTION ===== */
+  --ease:cubic-bezier(.22,.68,0,1);
 }
 
 *{box-sizing:border-box;}
