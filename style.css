@@ -334,6 +334,38 @@ input,select,textarea{font-family:inherit;}
 .hero-search-field input:focus{outline:none;}
 .hero-search-divider{width:1px; height:36px; background:rgba(28,23,18,0.1);}
 .hero-search-btn{white-space:nowrap; padding:16px 32px;}
+.hero-content > *{
+  opacity:0;
+  animation:heroText .9s var(--ease) forwards;
+}
+
+.hero-content .hero-eyebrow{
+  animation-delay:.15s;
+}
+
+.hero-content .hero-title{
+  animation-delay:.3s;
+}
+
+.hero-content .hero-desc{
+  animation-delay:.45s;
+}
+
+.hero-content .hero-buttons{
+  animation-delay:.6s;
+}
+
+@keyframes heroText{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
 /* =========================================================
    Tour cards
