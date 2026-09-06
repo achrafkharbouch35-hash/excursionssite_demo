@@ -754,286 +754,75 @@ textarea{
    HERO
    ========================================================= */
 
-.hero{
-  position:relative;
+/* =========================================================
+   HERO — IMAGE PLEIN ÉCRAN
+   ========================================================= */
 
-  min-height:100vh;
-
-  display:flex;
-  align-items:center;
-
-  overflow:hidden;
-
-  background:var(--surface);
-
-  padding:140px 6vw 90px;
+.hero {
+  position: relative;
+  min-height: calc(100vh - 65px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #2a1f19;
 }
 
-
-/* IMAGE */
-
-.hero-media{
-  position:absolute;
-
-  right:4vw;
-  top:105px;
-  bottom:55px;
-
-  width:52%;
-
-  z-index:0;
-
-  overflow:hidden;
-
-  border-radius:24px;
+/* Image qui remplit absolument tout le Hero */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.hero-media img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:transform 1.2s var(--ease);
+.hero-media img,
+.hero-media picture,
+.hero-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
-.hero:hover .hero-media img{
-  transform:scale(1.025);
-}
-
-.hero-media::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
+/* Assombrissement / couleur par-dessus l'image */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 
   background:
     linear-gradient(
-      120deg,
-      rgba(7,27,46,.20),
-      transparent 55%
+      90deg,
+      rgba(42, 31, 25, 0.78) 0%,
+      rgba(42, 31, 25, 0.48) 38%,
+      rgba(42, 31, 25, 0.18) 70%,
+      rgba(42, 31, 25, 0.28) 100%
     );
 }
 
-
-/* DECORATIVE BLOCK */
-
-.hero::before{
-  content:"";
-
-  position:absolute;
-
-  right:0;
-  bottom:0;
-
-  width:38%;
-  height:30%;
-
-  background:var(--navy);
-
-  z-index:-1;
+/* Contenu au-dessus de l'image */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-
-/* CONTENT */
-
-.hero-content{
-  position:relative;
-
-  z-index:2;
-
-  width:46%;
-  max-width:650px;
-
-  margin:0;
-
-  padding:0;
+/* Note / avis */
+.hero-rating {
+  position: relative;
+  z-index: 3;
 }
 
-.hero-eyebrow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  color:var(--turquoise-dark);
-
-  font-size:11px;
-  font-weight:900;
-
-  letter-spacing:.17em;
-  text-transform:uppercase;
-
-  margin-bottom:22px;
-}
-
-.hero-eyebrow::before{
-  content:"";
-
-  width:34px;
-  height:2px;
-
-  background:var(--turquoise);
-}
-
-.hero-title{
-  color:var(--navy);
-
-  font-size:clamp(48px,6.2vw,82px);
-
-  line-height:.98;
-
-  letter-spacing:-.055em;
-
-  max-width:650px;
-}
-
-.hero-desc{
-  margin-top:24px;
-
-  max-width:510px;
-
-  color:var(--text-soft);
-
-  font-size:16px;
-
-  line-height:1.75;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-
-  margin-top:32px;
-
-  flex-wrap:wrap;
-}
-
-
-/* RATING */
-
-.hero-rating{
-  position:absolute;
-
-  z-index:3;
-
-  right:6vw;
-  top:95px;
-
-  background:white;
-
-  padding:14px 18px;
-
-  border-radius:12px;
-
-  box-shadow:var(--shadow-card);
-
-  border:1px solid rgba(7,27,46,.05);
-
-  text-align:center;
-}
-
-.hero-rating .stars{
-  color:var(--turquoise-dark);
-
-  font-size:14px;
-  letter-spacing:2px;
-}
-
-.hero-rating p{
-  color:var(--navy);
-
-  font-size:11px;
-
-  font-weight:800;
-
-  margin-top:5px;
-
-  white-space:nowrap;
-}
-
-
-/* HERO SEARCH */
-
-.hero-search{
-  position:absolute;
-
-  z-index:5;
-
-  left:6vw;
-  bottom:35px;
-
-  width:min(700px,55vw);
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:14px;
-
-  box-shadow:0 20px 50px rgba(7,27,46,.13);
-
-  display:flex;
-  align-items:center;
-
-  padding:8px;
-
-  gap:0;
-}
-
-.hero-search-field{
-  flex:1;
-
-  min-width:120px;
-
-  padding:7px 17px;
-}
-
-.hero-search-field label{
-  display:block;
-
-  color:var(--text-soft);
-
-  font-size:9px;
-
-  font-weight:900;
-
-  text-transform:uppercase;
-
-  letter-spacing:.08em;
-
-  margin-bottom:5px;
-}
-
-.hero-search-field input{
-  width:100%;
-
-  border:none;
-  background:none;
-
-  color:var(--navy);
-
-  font-size:13px;
-
-  font-weight:700;
-}
-
-.hero-search-field input:focus{
-  outline:none;
-}
-
-.hero-search-divider{
-  width:1px;
-  height:34px;
-
-  background:var(--border);
-}
-
-.hero-search-btn{
-  min-height:48px;
-
-  padding:13px 22px;
-
-  border-radius:9px;
+/* Barre de recherche */
+.hero-search {
+  position: absolute;
+  z-index: 4;
 }
 
 
